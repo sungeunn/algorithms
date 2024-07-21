@@ -1,20 +1,8 @@
 class Solution {
     public int solution(int[][] dots) {
-        int minX = Integer.MAX_VALUE;
-        int maxX = Integer.MIN_VALUE;
-        int minY = Integer.MAX_VALUE;
-        int maxY = Integer.MIN_VALUE;
+        int x = Math.max(Math.abs(dots[0][0] - dots[1][0]), Math.abs(dots[0][0] - dots[2][0]));
+        int y = Math.max(Math.abs(dots[0][1] - dots[1][1]), Math.abs(dots[0][1] - dots[2][1]));
 
-        for (int i = 0; i < dots.length; i++) {
-            minX = Math.min(minX, dots[i][0]);
-            maxX = Math.max(maxX, dots[i][0]);
-            minY = Math.min(minY, dots[i][1]);
-            maxY = Math.max(maxY, dots[i][1]);
-        }
-
-        int width = maxX - minX;
-        int height = maxY - minY;
-
-        return width * height;
+        return x * y;
     }
 }
